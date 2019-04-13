@@ -1,0 +1,116 @@
+float yoff = 0.0;
+float scale;
+static final int Circles = 24;
+float t;
+//float counter = 0.0;
+//float speed = .50;
+Sprinkle s;
+
+
+Sprinkle [] sprinkles = new Sprinkle [55];
+
+void setup(){
+  background(20);
+  size(1920,1080);
+  noStroke();
+  scale = width/30;
+  for (int i =0; i < sprinkles.length; i++) {
+  sprinkles[i] = new Sprinkle();
+  }
+
+
+}
+
+void draw(){
+  background(20);
+  stroke (255);
+  strokeWeight(5);
+  beginShape(); 
+  float xoff = 0;
+
+for (float x = 0; x <= width; x += 10) {
+     
+    float y = map(noise(xoff, yoff), 0, 1, 200,300); // Option #1: 2D Noise
+    // float y = map(noise(xoff), 0, 1, 200,300);    // Option #2: 1D Noise
+    
+    
+    vertex(x, y); 
+    
+    xoff += 0.05;
+  }
+  // increment y dimension for noise
+  yoff += 0.01;
+  vertex(width, 200);
+  vertex(0, 200);
+  endShape(CLOSE);
+
+  for (int i =0; i < sprinkles.length; i++) {
+  sprinkles[i].update();
+  sprinkles[i].display();
+  }
+  
+  for (int i = 0; i < scale; i++) {
+    //colorMode(RGB, (i+1) * scale * 10);
+    
+    fill(millis()%((i+2) * scale * 20));
+    //ellipse(0,0,70,200);
+    rect(i*scale, 0, 20, height);
+  
+  }
+  
+  translate(width/2,height/2);
+  for(int i=0; i< Circles; i++) {
+  ellipse (x1(t+i),y1(t+i),x2(t+i),y2(t+i));
+  
+  
+  
+  }
+  //t++;
+  t+=0.5;
+
+ //saveFrame("frames/ex1-#####.png");
+
+
+
+}
+
+float x1 (float t){
+  return sin (t/10)*500+sin (t/5)* 20;
+}
+
+float y1 (float t){
+  return cos (t/20)*500;
+}
+float x2 (float t){
+  return sin (t/10)*100+ sin(t)* 2;
+}
+
+float y2 (float t){
+  return cos (t/20)*100+cos (t/12)* 20;
+}
+
+class Sprinkle {
+  //x = random(width);
+  //y = random (-200,-200);
+  float y = random(width);
+  float x = random (-200,-200);
+  float xspeed = random (4,10);
+  
+  void update(){
+    x=x+xspeed;
+    if (x>width){
+      x = random (-200,-100);
+    }
+  }
+void display(){
+  //stroke (random(255), random(255), random(255));
+  line(5,y,x,y);
+  //line(x,2,x,y+10);
+
+}
+    
+}
+    
+    
+    
+    
