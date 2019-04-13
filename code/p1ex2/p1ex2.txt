@@ -1,0 +1,99 @@
+PFont f;
+PImage b;
+int value = 255;
+void setup() {
+  size(1600, 1000);
+  rectMode(CENTER);
+  noStroke();
+  frameRate(30);
+  
+  f = createFont("Georgia", 42);
+      //set the font for drawing
+      textFont(f);
+  
+  b = loadImage("church.jpg"); 
+  image(b, 0, 0, width, height);
+}
+void draw() {
+
+background(255-value);
+  fill(value);
+  sdSign1("Nothing to see here...", 800,500);
+   StevesRanDots();
+  triangle(100, 200, 50, 50,60,80);
+  triangle(50, 200, 50, 50,60,80);
+  triangle(150, 200, 150, 50,60,80);
+  
+  triangle(400, 800, 50, 50,60,200);
+  triangle(500, 200, 50, 50,60,80);
+  triangle(750, 200, 50, 50,60,80);
+  
+  for ( int value = 0; value < width; value += 32 ) {
+    fill(mouseX, mouseY, 100, 100);
+    rect(value, height/2, 20, height);
+    image(b, mouseX, mouseY);
+  } 
+
+value++;
+  
+ if ( value > 255) {
+   value = 0;
+  }
+  
+  fill(value, 204);
+  ellipse (mouseX, height/2, mouseY/2+30, mouseY/2+15);
+  rect(mouseX, height/2, mouseY/2+10, mouseY/2+20);
+  rect(mouseX, height/2, mouseY/2+30, mouseY/2+30);
+  fill(value, 204);
+    
+  } 
+{
+}
+
+void sdSign1(String ss , int locx, int loy) {
+       fill(120,50);
+       rect(locx,loy,300,50);
+       fill(34);
+       rect(locx-10,loy-10,300,50);
+       color k = color(200,255,100);
+       sdDrawText(ss,locx+5,loy+20,k);
+       sdRanGrcs(locx,loy,color(200,100,0,30));
+     }
+     void sdDrawText(String s, int lx, int ly, color c ) {
+      fill(c);
+      text(s, lx, ly,20);
+    }
+    
+    void sdRanGrcs(int lx, int ly, color c) {
+      fill(c);
+      float r = random(50); 
+      
+      for (int i= 0; i < 30; i++) {
+        ellipse(lx-r,ly-r,10,10);
+      }
+    }
+
+void StevesRanDots() {
+
+  float r = random(50);
+  float rloop = random(20);
+  for (int i = 0; i < r; i++) {
+    fill(r+142, rloop+255, random(230));
+    rect(random(width), random(height), r+10, r+10);
+  }
+
+}
+
+void keyPressed() { 
+ println(key);
+
+  if ( key == 'b' || key == 'B' ) { 
+    
+    // example of toggle logic 
+    if (value == 50) { 
+      value = 255;
+    } else { 
+      value = 50;
+    }
+  }
+}
