@@ -2,35 +2,36 @@
 {
     margin: 0;
     padding: 0;
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 
+
 body{
-    background: #555;
+    background: #76ed88;
    /* color:#aaa;*/
     color:#d6d6d6;
-    
+    background-image: url('../images/astro.jpg')
 }
 
 a:link {
-    color: #BB772D;
+    color: #ffc74f;
     text-decoration: none;
 }
 
 a:visited {
     text-decoration: none;
-    color: #BB772D;
+    color: #ffc74f;
 }
 a:hover {
     text-decoration: none;
-    color: #f00;
+    color: #530c5e;
 }
 a:active {
     text-decoration: none;
-    color: #BB772D;
+    color: #ffc74f;
 }
 
 td, th {
@@ -38,7 +39,7 @@ td, th {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 0;
 }
 
@@ -80,7 +81,7 @@ p {
 }
 .navbar-link {
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.2rem;
     margin-right: 35px;
@@ -126,7 +127,8 @@ code{
 .container {
     width: 1200px;
     margin: 0 auto;
-    background-color: #668;
+    background-color: url('../images/astro.jpg')
+    background-image: url('../images/astro.jpg')
     box-sizing: border-box;
     padding: 0 40px;
 }
@@ -215,7 +217,7 @@ code{
 .item_smallleft img.docpix, .item_largeright img.docpix {
     width: 300px;
     height: 260px;
-    
+
 }
 
 
@@ -233,7 +235,7 @@ code{
     padding: 5px;
     font-size:10px;
     font-style:oblique;
-    
+
     background-color: #656565;
     margin-bottom: 20px;
 }
@@ -247,8 +249,3 @@ code{
     margin-top: 20px;
     border: 1px dashed black;
 }
-
-
-
-
-
