@@ -1585,7 +1585,7 @@
 /* Type */
 
 	body {
-		background-color: #020B13;
+		background-color: #000000;
 		color: #c0c2c4;
 	}
 
@@ -1654,6 +1654,8 @@
 
 	p {
 		margin: 0 0 2em 0;
+        color: white;
+
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2829,7 +2831,8 @@
 			}
 
 		.wrapper.style1 {
-			background-color: #062038;
+			background-color: #000000;
+/*            background-color: #062038;*/
 			color: #c1c7cd;
 		}
 
@@ -3340,7 +3343,7 @@
 				}
 
 		.video .caption {
-			color: #c0c5c9;
+			color: #ffffff;
 			padding: 1.5em;
 			font-size: 1.25em;
 			font-weight: 300;
@@ -3700,7 +3703,7 @@
 			transition-delay: 1.25s;
 			content: '';
 			display: block;
-			background-color: #041625;
+			background-color: #000000;
 			height: 100%;
 			left: 0;
 			opacity: 0.45;
